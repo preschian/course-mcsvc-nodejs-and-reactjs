@@ -47,7 +47,7 @@ app.post("/events", async (req, res) => {
     const comments = commentsByPostId[postId];
 
     const comment = comments.find((cmt) => {
-      return (cmt.id = id);
+      return cmt.id === id;
     });
     comment.status = status;
 
@@ -66,5 +66,5 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(4001, () => {
-  console.log("Run comments-service on 4001");
+  console.log("comments-service on 4001");
 });
