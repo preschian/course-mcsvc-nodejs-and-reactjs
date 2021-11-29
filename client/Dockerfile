@@ -1,7 +1,9 @@
 FROM node:16.13.0-alpine
 
+ENV CI=true
+
 WORKDIR /app
 COPY ./ ./
-RUN npm install
+RUN npm ci
 
 CMD ["npm", "start"]
