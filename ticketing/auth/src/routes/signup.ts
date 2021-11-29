@@ -16,16 +16,15 @@ router.post(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      throw new Error("Invalid email or password");
+      // This is javascript land (not ts)
+      const error = new Error("Invalid email or password");
+      error.reasons = errors.array();
+      throw error;
     }
-    const { email, password } = req.body;
-
     console.log("Creating a user...");
     throw new Error("Error connecting to database");
 
     res.send({});
-
-    // new User({ email, password })
   }
 );
 
