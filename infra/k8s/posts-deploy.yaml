@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: posts-deployment
+  name: posts-deploy
 spec:
   replicas: 1
   selector:
@@ -17,3 +17,16 @@ spec:
           image: preschian/posts
           # check local only
           imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-clusterip-service
+spec:
+  selector:
+    app: posts
+  ports:
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
