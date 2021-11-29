@@ -15,3 +15,5 @@ spec:
       containers:
         - name: posts
           image: preschian/posts
+          # check local only
+          imagePullPolicy: Never
