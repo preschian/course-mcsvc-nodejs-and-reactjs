@@ -2,7 +2,7 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
-import { errorHandler, NotFoundError } from "@pf-tickets/common";
+import { errorHandler, NotFoundError, currentUser } from "@pf-tickets/common";
 import { createTicketRouter } from "./routes/new";
 
 const app = express();
@@ -15,6 +15,7 @@ app.use(
   })
 );
 
+app.use(currentUser);
 app.use(createTicketRouter);
 
 app.all("*", async (req, res) => {
