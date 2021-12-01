@@ -4,6 +4,6 @@ ENV CI=true
 
 WORKDIR /app
 COPY ./ ./
-RUN npm ci
+RUN npm ci --only=prod
 
 CMD ["npm", "start"]
