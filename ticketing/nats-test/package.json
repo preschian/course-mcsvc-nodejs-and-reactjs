@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@pf-tickets/common": "^1.0.6",
     "@types/node": "^16.11.11",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^1.1.8",
