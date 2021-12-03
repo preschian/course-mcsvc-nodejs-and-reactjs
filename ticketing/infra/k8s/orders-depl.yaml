@@ -15,6 +15,8 @@ spec:
       containers:
         - name: orders
           image: preschian/orders
+          # pull image locally
+          imagePullPolicy: Never
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
