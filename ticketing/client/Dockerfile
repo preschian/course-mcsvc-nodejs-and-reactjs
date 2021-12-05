@@ -5,4 +5,4 @@ COPY package*.json ./
 RUN npm ci --only=prod
 COPY . .
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
